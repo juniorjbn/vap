@@ -2,7 +2,7 @@
 
 This lab is crafted to inspire the integration of validating admission policies in your environments, promoting the adoption of best practices. Embrace these strategies to fortify the security and reliability of your systems, and stay vigilant for upcoming vulnerabilities and misconfigurations with the assistance of [Zora](https://undistro.io/zora-dashboard/) & [Marvin](https://undistro.io/marvin)! Happy Kuberneting!
 
-# Step by step *([uh baby!](https://www.youtube.com/watch?v=GDEDQ8TCzW8))*
+# Step by step *([oh baby!](https://www.youtube.com/watch?v=GDEDQ8TCzW8))*
 
 ## 1. Create the GKE cluster, with alpha features.
 For this lab we'll use an *GKE alpha cluster 1.27.7* .
