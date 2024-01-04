@@ -1,3 +1,7 @@
+## Validating Admission Policy Examples LAB
+
+This lab is crafted to inspire the integration of validating admission policies in your environments, promoting the adoption of best practices. Embrace these strategies to fortify the security and reliability of your systems, and stay vigilant for upcoming vulnerabilities and misconfigurations with the assistance of [Zora](https://undistro.io/zora-dashboard/) & [Marvin](https://undistro.io/marvin)! Happy Kuberneting!
+
 # Step by step *([uh baby!](https://www.youtube.com/watch?v=GDEDQ8TCzW8))*
 
 ## 1. Create the GKE cluster, with alpha features.
@@ -5,6 +9,7 @@ For this lab we'll use an *GKE alpha cluster 1.27.7* .
 ```gcloud container clusters create kubilab --zone us-central1-a --num-nodes=3 --cluster-version "1.27.7-gke.1121000" --release-channel "regular" --machine-type n2-standard-2 --enable-kubernetes-alpha --no-enable-autoupgrade --no-enable-autorepair```
 
  
+
 ## 2. Deploy some apps for demo *(optional)*
 
 #Google - Demo Store
@@ -38,6 +43,7 @@ For this lab we'll use an *GKE alpha cluster 1.27.7* .
     --set saas.workspaceID='WoRkSpAcE_ID'
 
   
+ 
 
 ## Validating Admission Policy - Examples
 #***What is Validating Admission Policy?*** >>> https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/#getting-started-with-validating-admission-policy
@@ -120,4 +126,5 @@ Comments: It's considered a best practice to define resources in your deployment
 
 ___  
   
-This lab is crafted to inspire the integration of validating admission policies in your environments, promoting the adoption of best practices. Embrace these strategies to fortify the security and reliability of your systems, and stay vigilant for upcoming vulnerabilities and misconfigurations with the assistance of [Zora](https://undistro.io/zora-dashboard/) & [Marvin](https://undistro.io/marvin)! Happy Kuberneting!
+
+This was presented during a workshop in Portuguese (Brazil) and is available online on [YouTube](https://www.youtube.com/getupcloud).
