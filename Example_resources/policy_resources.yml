@@ -1,0 +1,24 @@
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: "policy-resources"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:   ["apps"]
+      apiVersions: ["v1"]
+      operations:  ["CREATE", "UPDATE"]
+      resources:   ["deployments"]
+  validations:
+    - expression: |
+        object.spec.template.spec.containers.all(c, 
+          has(c.resources)  &&
+          has(c.resources.requests) &&
+          has(c.resources.requests.cpu) &&
+          has(c.resources.requests.memory) &&
+          has(c.resources.limits) &&
+          has(c.resources.limits.cpu) &&
+          has(c.resources.limits.memory)
+        )
+      messageExpression: "'If you dont declare limits and requests, your deployments can use all the resources from the node. Come on!'"

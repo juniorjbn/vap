@@ -1,0 +1,15 @@
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: "policy-latest"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:   ["apps"]
+      apiVersions: ["v1"]
+      operations:  ["CREATE", "UPDATE"]
+      resources:   ["deployments"]
+  validations:
+    - expression: "object.spec.template.spec.containers.all(c, !c.image.contains(':latest'))"
+      messageExpression: "'For Gods sake, use semantic versioning for your images, you have until 2024-03-01 to fix this!'"

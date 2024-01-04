@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  namespace: kubilab-resources
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: public.ecr.aws/nginx/nginx:latest
+        ports:
+        - containerPort: 80
+        # resources: #know the resource limits and requests of your containers here https://github.com/robusta-dev/krr?tab=readme-ov-file#robusta-krr
+        #   limits:
+        #     cpu: "0.5"
+        #     memory: "512Mi"
+        #   requests:
+        #     cpu: "0.1"
+        #     memory: "256Mi"

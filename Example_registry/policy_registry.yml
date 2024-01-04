@@ -1,0 +1,15 @@
+apiVersion: admissionregistration.k8s.io/v1alpha1
+kind: ValidatingAdmissionPolicy
+metadata:
+  name: "policy-registry"
+spec:
+  failurePolicy: Fail
+  matchConstraints:
+    resourceRules:
+    - apiGroups:   ["apps"]
+      apiVersions: ["v1"]
+      operations:  ["CREATE", "UPDATE"]
+      resources:   ["deployments"]
+  validations:
+    - expression: "object.spec.template.spec.containers.all(c, c.image.startsWith('public.ecr.aws/nginx/'))"
+      messageExpression: "'Deployments cannot came from public registry'"
