@@ -128,3 +128,5 @@ ___
   
 
 This was presented during a workshop in Portuguese (Brazil) and is available online on [YouTube](https://www.youtube.com/getupcloud).
+
+Other useful links can be found [here](http://gtup.me/useful_links). 
