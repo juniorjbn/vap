@@ -8,7 +8,7 @@ This lab is crafted to inspire the integration of validating admission policies 
 For this lab we'll use an *GKE alpha cluster 1.27.7* .
 ```gcloud container clusters create kubilab --zone us-central1-a --num-nodes=3 --cluster-version "1.27.7-gke.1121000" --release-channel "regular" --machine-type n2-standard-2 --enable-kubernetes-alpha --no-enable-autoupgrade --no-enable-autorepair```
 
- 
+This can be done with KinD too, [Matheus Faria](https://github.com/matheusfm) wrote an awesome post about it [here](https://undistro.io/blog/standardizing-enforcement-of-security-policies/#getting-started-with-validating-admission-policies). 
 
 ## 2. Deploy some apps for demo *(optional)*
 
