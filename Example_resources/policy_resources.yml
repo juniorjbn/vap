@@ -21,4 +21,5 @@ spec:
           has(c.resources.limits.cpu) &&
           has(c.resources.limits.memory)
         )
-      messageExpression: "'If you dont declare limits and requests, your deployments can use all the resources from the node. Come on!'"
+      messageExpression: "'If you dont declare limits and requests, \
+      your deployments can use all the resources from the node. Come on!'"
