@@ -33,14 +33,17 @@ This can be done with KinD too, [Matheus Faria](https://github.com/matheusfm) wr
 
 ## 3. [Deploy Zora with Marvin](https://zora-docs.undistro.io/latest/dashboard/#getting-started) to have visibility of your cluster
 
+    helm plugin install https://github.com/undistro/helm-zoraauth
+    helm zoraauth --audience="zora_prod" \
+      --client-id="e0eNfHFrvyHYMm6OfzMDDQuLNhTeYbjA" \
+      --domain="login.undistro.io"
     helm repo add undistro https://charts.undistro.io --force-update
     helm repo update undistro
     helm upgrade --install zora undistro/zora \
-    -n zora-system \
-    --create-namespace \
-    --wait \
-    --set clusterName=kubilab \
-    --set saas.workspaceID='WoRkSpAcE_ID'
+      -n zora-system --create-namespace --wait \
+      --set clusterName="$(kubectl config current-context)" \
+      --set saas.workspaceID='YourWorkspaceID' \
+      --values tokens.yaml
 
   
  
