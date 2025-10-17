@@ -46,9 +46,7 @@ For this lab we'll use an *KinD 1.33.4v Cluster * .
       --values tokens.yaml
 
   
- 
-
-## Validating Admission Policy - Examples
+## First things first
 #***What is Validating Admission Policy?*** >>> https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/#getting-started-with-validating-admission-policy
 
 #
@@ -56,6 +54,10 @@ For this lab we'll use an *KinD 1.33.4v Cluster * .
 #
 
 ![VAP in K8s](assets/vap.avif)
+
+#
+
+## Validating Admission Policy - Examples
 
 *#Example 01 - Maximum replicas*
 
