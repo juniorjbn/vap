@@ -133,11 +133,10 @@ ___
  3. Binding Policy (`kubectl apply -f policy_resources_binding.yml`)
  4. Test Deployment (`kubectl apply -f nginx_deploy_resources.yml`)
 
-Comments: It's considered a best practice to define resources in your deployment, as described [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits). There's an ongoing discussion about whether to set CPU limits or not, so choose wisely :D ([article 1](https://home.robusta.dev/blog/stop-using-cpu-limits) & [article 2](https://dnastacio.medium.com/why-you-should-keep-using-cpu-limits-on-kubernetes-60c4e50dfc61)). Uncomment lines 21-27 in the file `nginx_deploy_resources.yml` to make it work.
+Comments: 
+ - It's considered a best practice to define resources in your deployment, as described [here](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#requests-and-limits). 
+ - There's an ongoing discussion about whether to set CPU limits or not, so choose wisely :D ([article 1](https://home.robusta.dev/blog/stop-using-cpu-limits) & [article 2](https://dnastacio.medium.com/why-you-should-keep-using-cpu-limits-on-kubernetes-60c4e50dfc61)). 
+ - Uncomment lines 21-27 in the file `nginx_deploy_resources.yml` to make it work.
 
-___  
-  
-
-This was presented during a workshop in Portuguese (Brazil) and is available online on [YouTube](https://www.youtube.com/getupcloud).
-
+___ 
 Other useful links can be found [here](http://gtup.me/useful_links). 
