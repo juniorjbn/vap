@@ -4,11 +4,11 @@ This lab is crafted to inspire the integration of validating admission policies 
 
 # Step by step *([oh baby!](https://www.youtube.com/watch?v=GDEDQ8TCzW8))*
 
-## 1. Create the GKE cluster, with alpha features.
-For this lab we'll use an *GKE alpha cluster 1.27.7* .
-```gcloud container clusters create kubilab --zone us-central1-a --num-nodes=3 --cluster-version "1.27.7-gke.1121000" --release-channel "regular" --machine-type n2-standard-2 --enable-kubernetes-alpha --no-enable-autoupgrade --no-enable-autorepair```
+## 1. Create KinD Cluster first.
+For this lab we'll use an *KinD 1.33.4v Cluster * .
+```kind create cluster --config  assets/kind_config.yaml```
 
-This can be done with KinD too, [Matheus Faria](https://github.com/matheusfm) wrote an awesome post about it [here](https://undistro.io/blog/standardizing-enforcement-of-security-policies/#getting-started-with-validating-admission-policies). 
+[Matheus Faria](https://github.com/matheusfm) wrote an awesome post about this [here](https://getup.io/en/blog/standardizing-enforcement-of-security-policies#getting-started-with-validating-admission-policies). 
 
 ## 2. Deploy some apps for demo *(optional)*
 
@@ -50,6 +50,8 @@ This can be done with KinD too, [Matheus Faria](https://github.com/matheusfm) wr
 
 ## Validating Admission Policy - Examples
 #***What is Validating Admission Policy?*** >>> https://kubernetes.io/docs/reference/access-authn-authz/validating-admission-policy/#getting-started-with-validating-admission-policy
+
+![VAP in K8s](assets/vap.avif)
 
 *#Example 01 - Maximum replicas*
 
