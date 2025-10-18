@@ -1,13 +1,15 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicyBinding
 metadata:
-  name: "policy-labels-binding"
+  name: policy-labels-binding
 spec:
-  policyName: "policy-labels"
-  validationActions: [Deny]
+  policyName: policy-labels
+  validationActions:
+    - Deny
   paramRef:
-    name: "configmap-labels"
-    namespace: "kubilab-labels"  
+    name: configmap-labels
+    namespace: kubilab-labels
+    parameterNotFoundAction: Deny
   matchResources:
     namespaceSelector:
       matchLabels:

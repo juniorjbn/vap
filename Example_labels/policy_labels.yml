@@ -1,22 +1,20 @@
 apiVersion: admissionregistration.k8s.io/v1
 kind: ValidatingAdmissionPolicy
 metadata:
-  name: "policy-labels"
+  name: policy-labels
 spec:
-  failurePolicy: Fail
   paramKind:
     apiVersion: v1
-    kind: ConfigMap  
+    kind: ConfigMap
   matchConstraints:
     resourceRules:
-    - apiGroups:   ["apps"]
-      apiVersions: ["v1"]
-      operations:  ["CREATE", "UPDATE"]
-      resources:   ["deployments"]
+      - apiGroups: ["", "apps"]
+        apiVersions: ["v1"]
+        operations: ["CREATE", "UPDATE"]
+        resources: ["pods", "deployments"]
   validations:
     - expression: >
-        has(object.metadata.labels) &&
-        params.data.requiredLabels.split(",").all(req, 
-          req in object.metadata.labels
-        )
-      message: "Deployments without required labels"
+        has(object.metadata.labels)
+        && 'requiredLabels' in params.data
+        && params.data['requiredLabels'].split(',').all(req, req.trim() in object.metadata.labels)
+      message: "Deployments without required labels are not allowed."
